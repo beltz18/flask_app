@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flask App</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+  <h1>Hello World</h1>
+  <p>Cantidad de usuarios registrados: <b>{{ num_users }}</b></p>
+  <p>
+    {% for name in user %}
+    {{ name }}
+    {% endfor %}
+  </p>
+</body>
+</html>
