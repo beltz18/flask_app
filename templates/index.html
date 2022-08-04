@@ -10,10 +10,22 @@
 <body>
   <h1>Hello World</h1>
   <p>Cantidad de usuarios registrados: <b>{{ num_users }}</b></p>
-  <p>
-    {% for name in user %}
-    {{ name }}
-    {% endfor %}
-  </p>
+  <a href="/signup">Registrar un nuevo usuario</a>
+  {% if user %}
+  <table>
+    <thead>
+      <th>Nombre</th>
+      <th>Correo</th>
+    </thead>
+    <tbody>
+      {% for data in user %}
+      <tr>
+        <td>{{ data.name }}</td>
+        <td>{{ data.email }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
 </body>
 </html>
